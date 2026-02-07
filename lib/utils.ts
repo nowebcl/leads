@@ -187,11 +187,11 @@ export const recommendPlan = (state: QuoteState) => {
 export const buildWhatsappLink = (state: QuoteState, result: any) => {
     let specificInfo = "";
     if (state.category === "web") {
-        specificInfo = `- Tipo: ${state.type === 'web' ? 'Página Web' : 'Tienda Online'}\n${state.type === 'web' ? `- Rubro: ${state.rubro}` : `- Productos: ${state.products}`}`;
+        specificInfo = `- Tipo: ${state.type === 'pagina' ? 'Página Web' : 'Tienda Online'}\n${state.type === 'pagina' ? `- Rubro: ${state.rubro}` : `- Productos: ${state.products}`}`;
     } else if (state.category === "ia") {
-        specificInfo = `- Nivel IA: ${result.planName}\n- Canales: ${1 + state.extraChannels}\n- Integraciones: ${state.apiIntegrations}`;
+        specificInfo = `- Nivel IA: ${result.planName}\n- Canales: ${1 + (state.extraChannels || 0)}\n- Integraciones: ${state.apiIntegrations}`;
     } else if (state.category === "app") {
-        specificInfo = `- Nivel App: ${result.planName}\n- Pantallas: ${state.screensRange}\n- Módulos: ${state.appModules.join(', ')}`;
+        specificInfo = `- Nivel App: ${result.planName}\n- Pantallas: ${state.screensRange}\n- Módulos: ${(state.appModules || []).join(', ')}`;
     }
 
     const message = `Hola NOWEB! 👋 Vengo de la web y me interesa: *${result.planName}* (${result.categoryLabel})

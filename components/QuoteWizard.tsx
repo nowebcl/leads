@@ -76,7 +76,13 @@ export default function QuoteWizard() {
         const saved = localStorage.getItem('noweb_quote');
         if (saved) {
             try {
-                setFormData(JSON.parse(saved));
+                const parsed = JSON.parse(saved);
+                // If it's an old version (no category), we might want to reset or force 'web'
+                if (!parsed.category) {
+                    // Optional: localStorage.removeItem('noweb_quote');
+                } else {
+                    setFormData(prev => ({ ...prev, ...parsed }));
+                }
             } catch (e) {
                 console.error("Error loading quote", e);
             }
