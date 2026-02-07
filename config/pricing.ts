@@ -1,0 +1,39 @@
+export const WEB_PRICES = {
+    FASTPAGE: 149890,
+    LANDING_FOCUS: 199980,
+    INMOBILIARIA: 249980,
+    MINI_ECOMMERCE: 199980,
+    ECOMMERCE_FULL: 349980,
+    HOSTING_OFFSET: -19920,
+};
+
+export const IA_PRICES = {
+    BASICA: 399990,
+    INTERMEDIA: 779980,
+    AVANZADA: 1590000,
+    EXTRA_CHANNEL: 79990,
+    INTEGRATION_1_API: 129990,
+    INTEGRATION_2_3_API: 249990,
+    AGENDA_HUMAN: 89990,
+    ANALYTICS: 99990,
+};
+
+export const APP_PRICES = {
+    BASE_MVP: 0, // Placeholder as requested
+    BASE_PRO: 0,
+    BASE_PREMIUM: 0,
+    MODULES: {
+        AUTH: 89990,
+        PUSH: 59990,
+        PAYMENTS: 129990,
+        GEOLOCALIZATION: 149990,
+        CHAT: 159990,
+        ADMIN_PANEL: 199990,
+        STORES_PUBLISHING: 99990,
+    },
+    SCREENS: {
+        '3-5': 0,
+        '6-10': 99990,
+        '11-20': 199990,
+    }
+};
